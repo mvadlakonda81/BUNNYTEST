@@ -1,99 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Manideep Vadlakonda</title>
-  <style>
-    body{
-      margin:0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      display:flex;align-items:center;justify-content:center;
-      height:100vh;
-      background:linear-gradient(-45deg,#00d4ff,#7b61ff,#ff6ec7,#00ffa3);
-      background-size:400% 400%;
-      animation:bgmove 12s infinite alternate;
-      color:#fff;
-    }
-    @keyframes bgmove{
-      0%{background-position:0% 50%}
-      100%{background-position:100% 50%}
-    }
-    .card{
-      background:rgba(0,0,0,0.6);
-      padding:40px;
-      border-radius:20px;
-      text-align:center;
-      box-shadow:0 12px 40px rgba(0,0,0,0.5);
-      max-width:420px;
-      transform:scale(0.95);
-      opacity:0;
-      animation:fadeIn 1s forwards;
-    }
-    @keyframes fadeIn{to{transform:scale(1);opacity:1}}
-    .avatar{
-      width:120px;height:120px;
-      border-radius:50%;
-      margin:0 auto 20px;
-      display:flex;align-items:center;justify-content:center;
-      font-size:36px;font-weight:bold;
-      background:linear-gradient(135deg,#ff6ec7,#7b61ff,#00d4ff);
-      color:#fff;
-      box-shadow:0 0 20px rgba(255,255,255,0.4);
-    }
-    h1{margin:0 0 8px;font-size:28px}
-    h2{margin:0 0 20px;font-size:16px;font-weight:normal;color:#ccc}
-    p{margin:8px 0;color:#ddd;font-size:15px}
-    .btn{
-      display:inline-block;
-      margin:12px 8px 0;
-      padding:10px 18px;
-      border-radius:8px;
-      background:#fff;
-      color:#000;
-      font-weight:bold;
-      text-decoration:none;
-      transition:0.3s ease;
-    }
-    .btn:hover{
-      background:#ff6ec7;
-      color:#fff;
-      box-shadow:0 0 15px #ff6ec7;
-    }
-    .social{
-      margin-top:20px;
-      display:flex;justify-content:center;gap:15px;
-    }
-    .social a{
-      color:#fff;font-size:20px;text-decoration:none;
-      transition:0.3s ease;
-    }
-    .social a:hover{color:#ff6ec7}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manideep Vadlakonda | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
-    <div class="avatar">MV</div>
-    <h1>Manideep Vadlakonda</h1>
-    <h2>Associate Cloud Engineer<h2>
-    <p>📞 +91 123456789</p>
-    <p>✉ manideepvadlakonda@gmail.com</p>
-    <a class="btn" href="mailto:manideepvadlakonda@gmail.com">Contact Me</a>
-    <a class="btn" href="tel:+91123456789">Call</a>
+  <header>
+    <nav>
+      <h2 class="logo">MV</h2>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="social">
-      <a href="https://github.com/your-username" target="_blank">🐱 GitHub</a>
-      <a href="https://linkedin.com/in/your-link" target="_blank">💼 LinkedIn</a>
-      <a href="https://twitter.com/your-handle" target="_blank">🐦 Twitter</a>
-    </div>
-  </div>
+  <main>
+    <section class="card">
+      <div class="avatar">MV</div>
+      <h1>Manideep Vadlakonda</h1>
+      <h2>Associate Cloud Engineer</h2>
+      <p>Passionate about Cloud, DevOps, and modern infrastructure solutions.</p>
+
+      <div class="btn-group">
+        <a class="btn" href="about.html">Learn More</a>
+        <a class="btn" href="projects.html">See Projects</a>
+      </div>
+
+      <div class="social">
+        <a href="https://github.com/your-username" target="_blank">🐱 GitHub</a>
+        <a href="https://linkedin.com/in/your-link" target="_blank">💼 LinkedIn</a>
+        <a href="https://twitter.com/your-handle" target="_blank">🐦 Twitter</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Manideep Vadlakonda | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
