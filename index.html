@@ -1,173 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Manideep Vadlakonda | Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile - Pawan Kalyan (Stylized Vector)</title>
   <style>
-    /* Base Styles */
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: linear-gradient(-45deg, #00d4ff, #7b61ff, #ff6ec7, #00ffa3);
-      background-size: 400% 400%;
-      animation: bgmove 12s infinite alternate;
-      color: #fff;
-      scroll-behavior: smooth;
+    :root{
+      --bg:#efe6dd;
+      --card:#fff;
+      --accent:#1f2937;
+      --warm:#e9b89a;
+      --shadow: rgba(31,41,55,0.12);
     }
-    @keyframes bgmove {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-    a { text-decoration: none; }
-
-    /* Navbar */
-    header {
-      position: fixed;
-      top: 0; left: 0; width: 100%;
-      background: rgba(0,0,0,0.6);
-      padding: 15px 40px;
-      display: flex; justify-content: space-between; align-items: center;
-      z-index: 1000;
-      backdrop-filter: blur(6px);
-    }
-    .logo { font-size: 22px; font-weight: bold; }
-    .nav-links { list-style: none; display: flex; gap: 20px; }
-    .nav-links a {
-      color: #fff; font-weight: bold; transition: 0.3s;
-    }
-    .nav-links a:hover, .nav-links a.active { color: #ff6ec7; }
-
-    /* Sections */
-    section {
-      min-height: 100vh;
-      padding: 100px 20px 60px;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg),#f7f2ef);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+      padding:24px;
+      color:var(--accent);
     }
 
-    /* Card */
-    .card {
-      background: rgba(0,0,0,0.6);
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 500px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-      animation: fadeIn 1s forwards;
-      transform: scale(0.95); opacity: 0;
-    }
-    @keyframes fadeIn { to { transform: scale(1); opacity: 1; } }
-
-    .avatar {
-      width: 120px; height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 36px; font-weight: bold;
-      background: linear-gradient(135deg, #ff6ec7, #7b61ff, #00d4ff);
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    /* container */
+    .profile-card{
+      width:420px;
+      max-width:96vw;
+      background:var(--card);
+      border-radius:16px;
+      box-shadow:0 10px 30px var(--shadow);
+      padding:22px;
+      text-align:center;
+      -webkit-font-smoothing:antialiased;
     }
 
-    h1 { margin: 0 0 8px; font-size: 28px; }
-    h2 { margin: 0 0 20px; font-size: 18px; font-weight: normal; color: #ccc; }
-    p { margin: 8px 0; color: #ddd; font-size: 15px; }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      margin: 10px 8px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      background: #fff; color: #000;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #ff6ec7;
-      color: #fff;
-      box-shadow: 0 0 15px #ff6ec7;
+    .portrait-wrap{
+      width:240px;height:240px;
+      margin:0 auto 18px;
+      border-radius:18px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg,#f5efe9,#efe6dd);
+      box-shadow: inset 0 -6px 20px rgba(0,0,0,0.03), 0 6px 18px rgba(31,41,55,0.06);
     }
 
-    /* Social */
-    .social {
-      margin-top: 20px;
-      display: flex; justify-content: center; gap: 20px;
-    }
-    .social a { font-size: 22px; color: #fff; transition: 0.3s; }
-    .social a:hover { color: #ff6ec7; }
+    h1{margin:0;font-size:20px;letter-spacing:0.2px}
+    h2{margin:6px 0 12px;font-size:13px;color:#6b7280;font-weight:600}
+    p{margin:0 0 12px;color:#374151;font-size:14px}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.5);
-      font-size: 14px;
+    .actions{
+      display:flex;gap:10px;justify-content:center;margin-top:12px;
+    }
+    .btn{
+      padding:10px 12px;border-radius:10px;border:0;background:#111827;color:#fff;font-weight:600;
+      text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:8px;
+      box-shadow:0 6px 18px rgba(17,24,39,0.12);
+    }
+    .btn.secondary{
+      background:transparent;color:var(--accent);border:1px solid rgba(17,24,39,0.06);
+      box-shadow:none;font-weight:700;
+    }
+
+    /* small helpers */
+    .meta{display:flex;gap:12px;justify-content:center;color:#6b7280;font-size:13px;margin-top:10px}
+    .note{font-size:12px;color:#9ca3af;margin-top:14px}
+    /* responsive */
+    @media (max-width:420px){
+      .portrait-wrap{width:200px;height:200px}
     }
   </style>
 </head>
 <body>
+  <div class="profile-card" role="region" aria-label="Profile card">
+    <div class="portrait-wrap" aria-hidden="false">
+      <!--
+        SVG: stylized head & shoulders portrait.
+        You can edit skin, hair, clothing colors by changing gradient stops & fill colors below.
+      -->
+      <svg width="210" height="210" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized portrait">
+        <defs>
+          <!-- skin gradient -->
+          <linearGradient id="skinG" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#f4c8a3"/>
+            <stop offset="60%" stop-color="#e6ab88"/>
+            <stop offset="100%" stop-color="#d99672"/>
+          </linearGradient>
 
-  <!-- Navbar -->
-  <header>
-    <div class="logo">MV</div>
-    <ul class="nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </header>
+          <!-- hair gradient -->
+          <linearGradient id="hairG" x1="0" x2="1">
+            <stop offset="0%" stop-color="#121212"/>
+            <stop offset="100%" stop-color="#2a2a2a"/>
+          </linearGradient>
 
-  <!-- Home Section -->
-  <section id="home">
-    <div class="card">
-      <div class="avatar">MV</div>
-      <h1>Manideep Vadlakonda</h1>
-      <h2>Associate Cloud Engineer</h2>
-      <p>🚀 Passionate about Cloud, DevOps, and building scalable infrastructure solutions.</p>
+          <!-- shirt gradient -->
+          <linearGradient id="shirtG" x1="0" x2="1">
+            <stop offset="0%" stop-color="#0f1724"/>
+            <stop offset="100%" stop-color="#111827"/>
+          </linearGradient>
 
-      <div>
-        <a class="btn" href="#about">Learn More</a>
-        <a class="btn" href="#projects">My Work</a>
-      </div>
+          <!-- soft shadow filter -->
+          <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000" flood-opacity="0.18"/>
+          </filter>
+        </defs>
 
-      <div class="social">
-        <a href="https://github.com/your-username" target="_blank">🐱 GitHub</a>
-        <a href="https://linkedin.com/in/your-link" target="_blank">💼 LinkedIn</a>
-        <a href="https://twitter.com/your-handle" target="_blank">🐤 Twitter</a>
-      </div>
+        <!-- subtle vignette background -->
+        <rect x="0" y="0" width="400" height="400" rx="16" fill="url(#bg)" opacity="0.02"/>
+
+        <!-- shoulders / shirt -->
+        <g transform="translate(60,230)">
+          <path d="M20 50 C30 95 80 120 200 118 C320 116 360 94 380 50 L380 180 L0 180 Z" fill="url(#shirtG)" filter="url(#softShadow)"/>
+        </g>
+
+        <!-- neck -->
+        <path d="M170 220 C168 205 175 190 200 190 C225 190 232 205 230 220 L230 250 L170 250 Z" fill="#d79a78" opacity="0.9"/>
+
+        <!-- face shape -->
+        <path d="M120 120
+                 C115 160 120 210 170 230
+                 C240 230 300 200 295 150
+                 C300 105 270 70 210 70
+                 C160 70 130 92 120 120 Z"
+              fill="url(#skinG)" stroke="rgba(0,0,0,0.03)" stroke-width="1"/>
+
+        <!-- hair (fringe + top) -->
+        <path d="M100 90 C95 60 120 40 170 40 C220 40 255 58 280 92 C272 80 246 70 210 70 C170 70 140 85 120 100 Z"
+              fill="url(#hairG)"/>
+
+        <!-- side hair -->
+        <path d="M110 110 C96 120 82 150 95 180 C90 150 110 118 110 110 Z" fill="#111"/>
+
+        <!-- eyebrow left -->
+        <path d="M150 130 C160 126 175 126 190 132" stroke="#1b1b1b" stroke-linecap="round" stroke-width="6" fill="none" stroke-linejoin="round" opacity="0.95"/>
+        <!-- eyebrow right -->
+        <path d="M215 132 C230 128 245 128 260 132" stroke="#1b1b1b" stroke-linecap="round" stroke-width="6" fill="none" stroke-linejoin="round" opacity="0.95"/>
+
+        <!-- eyes -->
+        <g fill="#fff" stroke="rgba(0,0,0,0.06)" stroke-width="1">
+          <ellipse cx="180" cy="150" rx="16" ry="10"/>
+          <ellipse cx="240" cy="150" rx="16" ry="10"/>
+        </g>
+        <!-- pupils -->
+        <circle cx="182" cy="152" r="5" fill="#1b1b1b"/>
+        <circle cx="242" cy="152" r="5" fill="#1b1b1b"/>
+        <!-- subtle eye shine -->
+        <circle cx="179" cy="149" r="1.6" fill="#fff" opacity="0.9"/>
+        <circle cx="239" cy="149" r="1.6" fill="#fff" opacity="0.9"/>
+
+        <!-- nose -->
+        <path d="M205 160 C200 170 195 180 205 185" stroke="#bb7f64" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+        <!-- moustache & beard hint -->
+        <path d="M165 190 C185 200 225 200 255 190" stroke="#2b2b2b" stroke-width="3.6" stroke-linecap="round" fill="none" opacity="0.95"/>
+        <path d="M140 175 C150 195 145 210 165 225" stroke="#2b2b2b" stroke-width="2.8" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M285 175 C275 195 280 210 260 225" stroke="#2b2b2b" stroke-width="2.8" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+        <!-- mouth -->
+        <path d="M185 205 C200 213 225 213 240 205" stroke="#b76b53" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+
+        <!-- subtle cheek shading -->
+        <ellipse cx="160" cy="185" rx="22" ry="10" fill="#000" opacity="0.03"/>
+        <ellipse cx="260" cy="185" rx="22" ry="10" fill="#000" opacity="0.03"/>
+
+        <!-- small nameplate (optional, for clarity if used standalone) -->
+        <g transform="translate(0,10)">
+          <rect x="68" y="330" rx="8" width="260" height="40" fill="rgba(255,255,255,0.06)"/>
+          <text x="200" y="357" text-anchor="middle" font-family="Inter, Arial" font-size="16" fill="#0f1724" opacity="0.85" font-weight="700">Pawan Kalyan (stylized)</text>
+        </g>
+      </svg>
     </div>
-  </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h1>About Me</h1>
-    <p>Hello 👋, I’m Manideep. A dedicated Cloud Engineer with experience in AWS, GCP, and DevOps tools.</p>
-    <p>I love solving real-world problems using cloud technologies, automation, and CI/CD pipelines.</p>
-  </section>
+    <h1>Pawan Kalyan</h1>
+    <h2>Stylized Headshot · Vector SVG</h2>
+    <p>High-quality, scalable SVG vector portrait suitable for profile use — editable colors and size.</p>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h1>Projects</h1>
-    <p>💻 <strong>AWS DevOps Pipeline</strong> – Automated deployments with CI/CD and monitoring.</p>
-    <p>☁ <strong>Cloud Hosting</strong> – Deployed scalable apps on AWS & GCP free tiers.</p>
-    <p>📦 <strong>Dockerized App</strong> – Containerized portfolio website using Docker.</p>
-  </section>
+    <div class="actions" role="group" aria-label="Actions">
+      <!-- Save as SVG (opens raw SVG in new tab) -->
+      <a class="btn" href="#" id="downloadSVG" title="Open SVG in a new tab">📄 Open SVG</a>
+      <!-- Copy SVG code -->
+      <a class="btn secondary" href="#" id="copyCode" title="Copy SVG code to clipboard">📋 Copy SVG Code</a>
+    </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h1>Contact Me</h1>
-    <p>📞 +91 123456789</p>
-    <p>✉ manideepvadlakonda@gmail.com</p>
-    <a class="btn" href="mailto:manideepvadlakonda@gmail.com">Email Me</a>
-    <a class="btn" href="tel:+91123456789">Call Me</a>
-  </section>
+    <div class="meta" aria-hidden="true">
+      <div>🖼️ Vector • Scalable</div>
+      <div>🎨 Editable</div>
+    </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Manideep Vadlakonda | All Rights Reserved</p>
-  </footer>
+    <div class="note">Tip: You can right-click the portrait and "Save image as..." after you open the SVG in a new tab, or copy the code to embed inline in your site.</div>
+  </div>
 
+  <script>
+    // Grab the inline SVG from the DOM and prepare it for download / copy actions.
+    (function(){
+      const svgEl = document.querySelector('.portrait-wrap svg');
+      const downloadBtn = document.getElementById('downloadSVG');
+      const copyBtn = document.getElementById('copyCode');
+
+      // Helper to serialize SVG
+      function getSvgString(svgNode){
+        const serializer = new XMLSerializer();
+        let source = serializer.serializeToString(svgNode);
+        // add xml declaration
+        if(!source.match(/^<\?xml/)){
+          source = '<?xml version="1.0" encoding="UTF-8"?>\n' + source;
+        }
+        return source;
+      }
+
+      // Open SVG in new tab
+      downloadBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        const svgStr = getSvgString(svgEl);
+        const blob = new Blob([svgStr], {type: 'image/svg+xml;charset=utf-8'});
+        const url = URL.createObjectURL(blob);
+        window.open(url, '_blank');
+        // revoke after some time to free memory
+        setTimeout(()=> URL.revokeObjectURL(url), 20000);
+      });
+
+      // Copy SVG code to clipboard
+      copyBtn.addEventListener('click', async function(e){
+        e.preventDefault();
+        const svgStr = getSvgString(svgEl);
+        try {
+          await navigator.clipboard.writeText(svgStr);
+          copyBtn.textContent = '✅ Copied';
+          setTimeout(()=> copyBtn.textContent = '📋 Copy SVG Code', 1400);
+        } catch (err) {
+          copyBtn.textContent = '❌ Failed';
+          setTimeout(()=> copyBtn.textContent = '📋 Copy SVG Code', 1400);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
